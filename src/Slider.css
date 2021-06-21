@@ -1,0 +1,79 @@
+#slider {
+    background-color: var(--whiteBackground);
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border-bottom: 0.5px solid var(--grayText);
+
+}
+.monthly-yearly{
+    display: flex;
+}
+.pageviews{
+    padding: 2rem 0;
+}
+.slider-icon-container{
+    background-color: var(--sliderBackground);
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-40%);
+}
+.amount{
+    color: var(--grayText);
+    display: flex;
+    align-items: center;
+}
+.amount strong{
+    color: var(--CTAbackgroundandText);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.slider-bar{
+        width: 90%;
+        position: relative;
+        padding-bottom: 3rem;
+}
+.slider-empty{
+    position: absolute;
+    width: 100%;
+    height: 0.65rem;
+    background-color: var(--emptySliderBar) ;
+}
+.slider-full{
+    position: absolute;
+    width: 30%;
+    height: 0.65rem;
+    background-color: var(--fullSliderBar) ;
+}
+.monthly-yearly {
+    font-size: 0.85rem;
+    color: var(--grayText);
+    padding: 3rem 0;
+}
+.choise-outside{
+    padding: 0.5rem 1.3rem;
+    height: 1rem;
+    position: relative;
+    background-color: var(--toggleBackground);
+    border-radius: 1.5rem;
+}
+.inner-choise{
+    position: absolute;
+    background-color: var(--whiteBackground);
+    width: 1rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    top: 3px;
+    left: 4px;
+}
+.discount{
+    max-height: 1rem;
+    padding: 0 0.4rem;
+    border-radius: 0.4rem;
+    background-color: var(--discountBackground);
+    color: var(--discountText);
+}

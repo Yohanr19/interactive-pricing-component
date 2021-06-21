@@ -1,0 +1,46 @@
+.App {
+    margin: 4rem auto;
+    width: 90%;
+    display: grid;
+    place-items: center;
+}
+.main-header-text{
+    text-align: center;
+    font-size: 1.3rem;
+     color: var(--CTAbackgroundandText);
+     font-size: 800;
+}
+.intro{
+    background: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: grid;
+    place-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+.main-descp{
+    text-align: center;
+    font-size: 0.9rem;
+    max-width: 60%;
+    margin: 1rem 0;
+    color: var(--grayText);
+}
+.features{
+    padding: 1.4rem 0;
+    color: var(--grayText)
+}
+.feature{
+    padding: 0.5rem 0;
+}
+.check-icon {
+    padding: 0 0.6rem;
+}
+.start-trial{
+    margin: 2.3rem 0;
+    padding: 0.8rem 3rem;
+    background-color: var(--CTAbackgroundandText);
+    color: var(--CTAText);
+    border-radius: 3rem;
+}
