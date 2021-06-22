@@ -94,3 +94,20 @@
     background-color: var(--discountBackground);
     color: var(--discountText);
 }
+
+@media screen and (min-width: 750px) {
+    #slider-section {
+        position: relative;
+    }
+    .amount{
+        position: absolute;
+        right: 3rem;
+        top: 1rem;
+    }
+    .pageviews{
+        justify-self: left;
+        margin-left: 3rem;
+    }
+
+    
+}

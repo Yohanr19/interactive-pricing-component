@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState , useEffect} from 'react'
 import './Slider.css'
 
 const Slider = () => {
     const [amount, setAmount] = useState(16);
     const [isMonth, setisMonth] = useState(true);
+    const [deviceWidth, setDeviceWidth] = useState (window.innerWidth)
     const handleChange = function(e) {
             setAmount(e.target.value)
     }
@@ -15,6 +16,27 @@ const Slider = () => {
                 setisMonth(true)
             }
     }
+    useEffect ( ()=> {
+        if (window.innerWidth > 750) {
+            document.getElementsByClassName('discount')[0].textContent = '-25% discount'
+        }
+        else {
+            document.getElementsByClassName('discount')[0].textContent = '-25%'
+        }
+        window.addEventListener('resize', (e)=> {
+            setDeviceWidth(window.innerWidth)
+            if (window.innerWidth > 750) {
+                document.getElementsByClassName('discount')[0].textContent = '-25% discount'
+            }
+            else {
+                document.getElementsByClassName('discount')[0].textContent = '-25%'
+            }
+        })
+        return window.removeEventListener('resize', (e)=> {
+            setDeviceWidth(window.innerWidth)
+        })
+    }, []) 
+    console.log(deviceWidth)
     let varPercentage = (amount/30)*100;
     return (
         <section id='slider-section'>
@@ -40,7 +62,7 @@ const Slider = () => {
                  </div>  
                   </div>
             <div>  Yearly Billing</div> 
-             <div className='discount'>-25% {/*25% discount text should be used when on desktop view*/}</div>
+             <div className='discount'></div>
             </div>
         </section>
     )

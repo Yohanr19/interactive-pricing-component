@@ -11,6 +11,7 @@ function App() {
         <h2 className='main-descp'> Sign-up for our 30-day trial. No credit card required.  </h2>
         </section>
         <Slider />
+        <div className= 'bottom-section'>
          <section className='features'> 
          <div className='feature'>
            <img className='check-icon' src= {checkIcon} alt='Check'/>
@@ -21,9 +22,9 @@ function App() {
          <div className='feature'>
          <img className='check-icon' src= {checkIcon} alt='Check'/>
          Email reports</div>
-            <button className='btn start-trial'>Start my trial</button>
          </section>
-
+           <button className='btn start-trial'>Start my trial</button>
+           </div>
     </div>
   );
 }

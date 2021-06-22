@@ -29,7 +29,16 @@
 }
 .features{
     padding: 1.4rem 0;
-    color: var(--grayText)
+    color: var(--grayText);
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.bottom-section {
+    background-color: var(--whiteBackground);
+    width: 100%;
+    display: grid;
+    place-items: center;
 }
 .feature{
     padding: 0.5rem 0;
@@ -38,9 +47,23 @@
     padding: 0 0.6rem;
 }
 .start-trial{
-    margin: 2.3rem 0;
     padding: 0.8rem 3rem;
     background-color: var(--CTAbackgroundandText);
     color: var(--CTAText);
     border-radius: 3rem;
+}
+@media screen and (min-width: 750px) {
+    .App {
+        margin: 4rem auto;
+        width: 43%;
+    }
+    .bottom-section{
+        grid-template-columns: 1fr 1fr;
+    }
+    .features{
+        place-items: start;
+    }
+    .check-icon {
+        padding-left: 3rem;
+    }
 }
