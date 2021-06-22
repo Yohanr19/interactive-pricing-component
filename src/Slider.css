@@ -95,7 +95,7 @@
     color: var(--discountText);
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1000px) {
     #slider-section {
         position: relative;
     }

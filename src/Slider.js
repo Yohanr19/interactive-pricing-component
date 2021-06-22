@@ -17,7 +17,7 @@ const Slider = () => {
             }
     }
     useEffect ( ()=> {
-        if (window.innerWidth > 750) {
+        if (window.innerWidth > 1000) {
             document.getElementsByClassName('discount')[0].textContent = '-25% discount'
         }
         else {
@@ -25,7 +25,7 @@ const Slider = () => {
         }
         window.addEventListener('resize', (e)=> {
             setDeviceWidth(window.innerWidth)
-            if (window.innerWidth > 750) {
+            if (window.innerWidth > 1000) {
                 document.getElementsByClassName('discount')[0].textContent = '-25% discount'
             }
             else {

@@ -52,7 +52,7 @@
     color: var(--CTAText);
     border-radius: 3rem;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1000px) {
     .App {
         margin: 4rem auto;
         width: 43%;
@@ -64,6 +64,6 @@
         place-items: start;
     }
     .check-icon {
-        padding-left: 3rem;
+        padding-left: 2rem;
     }
 }
