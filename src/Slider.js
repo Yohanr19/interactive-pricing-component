@@ -1,33 +1,48 @@
-import React from 'react'
-import sliderIcon from './images/icon-slider.svg'
+import React, {useState} from 'react'
 import './Slider.css'
 
 const Slider = () => {
-    let pagesview = 100;
-    let amount = 16.00;
-    // Make those stateful
+    const [amount, setAmount] = useState(16);
+    const [isMonth, setisMonth] = useState(true);
+    const handleChange = function(e) {
+            setAmount(e.target.value)
+    }
+    const handleMonthYear = function(e) {
+           if (isMonth === true) {
+               setisMonth(false);
+            }
+            else { 
+                setisMonth(true)
+            }
+    }
+    let varPercentage = (amount/30)*100;
     return (
-        <div id='slider'>
-            <h3 className='pageviews'> {pagesview + 'K'} Pageviews</h3>
+        <section id='slider-section'>
+            <h3 className='pageviews'> {Math.round(amount*6.25) + 'K'} Pageviews</h3>
             <div className='slider-bar'>
-               <div className='slider-empty'> 
-                  <div className='slider-full'> </div>
-               </div>
-                <div className='slider-icon-container'> <img className='slider-icon' src={sliderIcon} alt='slider'/> </div>
+                <input 
+                className='slider'
+                type='range' 
+                min='1'
+                 max='30' 
+                 value={amount} 
+                 onInput={handleChange}></input>
+                  <div style={{width: varPercentage+'%'}} className='slider-full'> </div>
+                  <div className='slider-empty'> </div>
             </div>
-            <text className='amount'> 
-            <strong className='amount-strong'>${amount}</strong>/month
-            </text>
+            <div className='amount'> 
+            <strong className='amount-strong'>${isMonth? amount: (amount*12)*0.75}</strong>/{isMonth? 'month': 'year'}
+            </div>
             <div className= 'monthly-yearly'>
-             <text>Monthly Billing</text> 
-            <div className='choise-outside'> 
-             <div className='inner-choise'> 
+             <div>Monthly Billing</div> 
+            <div className='choise-outside' onClick={handleMonthYear}> 
+             <div className='inner-choise' style={{left:isMonth?'7%':'55%'}}> 
                  </div>  
                   </div>
-            <text>  Yearly Billing</text> 
+            <div>  Yearly Billing</div> 
              <div className='discount'>-25% {/*25% discount text should be used when on desktop view*/}</div>
             </div>
-        </div>
+        </section>
     )
 }
 
