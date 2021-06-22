@@ -4,7 +4,6 @@ import './Slider.css'
 const Slider = () => {
     const [amount, setAmount] = useState(16);
     const [isMonth, setisMonth] = useState(true);
-    const [deviceWidth, setDeviceWidth] = useState (window.innerWidth)
     const handleChange = function(e) {
             setAmount(e.target.value)
     }
@@ -17,26 +16,17 @@ const Slider = () => {
             }
     }
     useEffect ( ()=> {
-        if (window.innerWidth > 1000) {
-            document.getElementsByClassName('discount')[0].textContent = '-25% discount'
-        }
-        else {
-            document.getElementsByClassName('discount')[0].textContent = '-25%'
-        }
+        if (window.innerWidth > 1000) document.getElementsByClassName('discount')[0].textContent = '-25% discount'
+        else  document.getElementsByClassName('discount')[0].textContent = '-25%'
         window.addEventListener('resize', (e)=> {
-            setDeviceWidth(window.innerWidth)
-            if (window.innerWidth > 1000) {
-                document.getElementsByClassName('discount')[0].textContent = '-25% discount'
-            }
-            else {
-                document.getElementsByClassName('discount')[0].textContent = '-25%'
-            }
+            if (window.innerWidth > 1000)   document.getElementsByClassName('discount')[0].textContent = '-25% discount'     
+            else  document.getElementsByClassName('discount')[0].textContent = '-25%'  
         })
         return window.removeEventListener('resize', (e)=> {
-            setDeviceWidth(window.innerWidth)
+            if (window.innerWidth > 1000)   document.getElementsByClassName('discount')[0].textContent = '-25% discount'     
+            else  document.getElementsByClassName('discount')[0].textContent = '-25%'  
         })
     }, []) 
-    console.log(deviceWidth)
     let varPercentage = (amount/30)*100;
     return (
         <section id='slider-section'>
